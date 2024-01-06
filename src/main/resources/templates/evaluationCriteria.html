@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestion des Critères d'Évaluation</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/critere.css}"/>
+</head>
+<body>
+<h1>Liste des Critères d'Évaluation</h1>
+<!-- Afficher la liste des critères dans un tableau -->
+<table >
+    <thead>
+    <tr>
+        <th>Nom du Critère</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="criterion : ${criteria}">
+        <td th:text="${criterion.name}"></td>
+    </tr>
+    </tbody>
+</table>
+<h2>Créer un nouveau Critère d'Évaluation</h2>
+<!-- Formulaire pour créer un nouveau critère -->
+<form th:action="@{/createCriterion}" method="post">
+    <input type="text" name="criterionName" placeholder="Nom du Critère" required>
+    <button type="submit">Créer</button>
+</form>
+<!-- Ajoutez d'autres fonctionnalités ou informations selon les besoins -->
+<a th:href="@{/}">Retour à la page d'accueil</a>
+</body>
+</html>
+``

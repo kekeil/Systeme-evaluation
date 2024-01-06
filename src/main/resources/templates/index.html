@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Page d'Accueil</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Page d'Accueil</h1>
+
+<div class="icon-link">
+  <a th:href="@{/evaluationCriteria}"  class="icon">
+    <img th:src="@{/css/image/list.png}" class="icon-img">
+  </a>
+  <br>
+  <br>
+  <p>Liste et Création des Critères d'Évaluation</p>
+</div>
+
+<div class="icon-link">
+  <a th:href="@{/submitEvaluation}"  class="icon">
+    <img th:src="@{/css/image/submit.png}" class="icon-img">
+  </a>
+  <br>
+  <br>
+  <p>Soumettre une Évaluation</p>
+</div>
+
+
+<div class="icon-link">
+  <a th:href="@{/evaluationHistory}"  class="icon">
+    <img th:src="@{/css/image/history.png}" class="icon-img">
+  </a>
+  <br>
+  <br>
+  <p>Historique des Évaluations</p>
+</div>
+
+<div class="icon-link">
+  <a th:href="@{/averageByCriterion}"  class="icon">
+    <img th:src="@{/css/image/moyenne.png}" class="icon-img">
+  </a>
+  <br>
+  <br>
+  <p>Moyennes par Critère</p>
+</div>
+
+</body>
+</html>

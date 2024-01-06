@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Historique des Évaluations</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/history.css}"/>
+</head>
+<body>
+<h1>Historique des Évaluations</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Date</th>
+    <th>Note</th>
+    <th>Avis</th>
+    <th>Critère</th>
+    <th>Nom de l'Utilisateur</th> <!-- Nouvelle colonne pour le nom de l'utilisateur -->
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="evaluation : ${evaluations}">
+    <td th:text="${evaluation.date}"></td>
+    <td th:text="${evaluation.rating}"></td>
+    <td th:text="${evaluation.avis}"></td>
+    <td>
+      <span th:if="${evaluation.criterion != null}" th:text="${evaluation.criterion.name}"></span>
+      <span th:unless="${evaluation.criterion != null}">N/A</span>
+    </td>
+    <td th:text="${evaluation.nameUser}"></td> <!-- Afficher le nom de l'utilisateur -->
+  </tr>
+  </tbody>
+</table>
+<a th:href="@{/}">Retour à la page d'accueil</a>
+</body>
+</html>

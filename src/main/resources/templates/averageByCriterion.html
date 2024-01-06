@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Moyennes par Critère</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/history.css}"/>
+</head>
+<body>
+<h1>Moyennes par Critère</h1>
+<!-- Afficher les moyennes par critère dans un tableau -->
+<table>
+    <thead>
+    <tr>
+        <th>Critère</th>
+        <th>Moyenne</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${averages}">
+        <td th:text="${entry.key}"></td>
+        <td th:text="${entry.value}"></td>
+    </tr>
+    </tbody>
+</table>
+<!-- Ajoutez d'autres fonctionnalités ou informations selon les besoins -->
+<a th:href="@{/}">Retour à la page d'accueil</a>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/submit.css}"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+          rel="stylesheet"/>
+</head>
+<body>
+
+
+<form th:action="@{/submitEvaluation}" method="post">
+  <h1>Soumettre une Évaluation</h1>
+  <div class="separation"></div>
+  <div class="corps-formulaire">
+    <div class="gauche">
+
+      <div class="groupe">
+        <label>Votre nom</label>
+        <input type="text" name="nom" autocomplete="off" />
+        <i class="fas fa-user"></i>
+      </div>
+
+
+      <div class="groupe">
+        <label>Choisissez une note</label>
+        <input type="number" name="rating" min="0" max="5" placeholder="Note (0-5)" required>
+      </div>
+
+      <div class="groupe">
+        <label>Séleectionner un critère a évaluer</label>
+        <select name="criterionId" required>
+          <option th:each="criterion : ${criteria}" th:value="${criterion.id}" th:text="${criterion.name}"></option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="droite">
+      <div class="groupe">
+        <label>Ecriver votre avis</label>
+        <textarea name="avis"  required></textarea>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="pied-formulaire" align="center">
+    <button>Soumettez votre évaluation</button>
+  </div>
+</form>
+
+<a th:href="@{/}">Retour à la page d'accueil</a>
+</body>
+</html>
